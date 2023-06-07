@@ -14,3 +14,9 @@ this project uses Spring Boot 3.0.x with Spring Web, Data JPA and security to sh
 - We added some classes to test dependency injection and the use of @Primary, @Qualifier and @Profile
 - We added an example to show the use of AOP programming
 
+## V3.0.0
+- We transformed POJOS to entities
+- We added repositories
+- We added init data to start with
+- We added Spring Data REST to test our repositories
+
