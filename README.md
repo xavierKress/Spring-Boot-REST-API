@@ -20,3 +20,8 @@ this project uses Spring Boot 3.0.x with Spring Web, Data JPA and security to sh
 - We added init data to start with
 - We added Spring Data REST to test our repositories
 
+## V4.0.0
+- We added a controller to show how Spring MVC works
+- We added a REST controller to show how we can use Spring MVC to generate REST API
+- We added Swagger to generate the API documentation
+
