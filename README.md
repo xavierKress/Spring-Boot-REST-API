@@ -25,3 +25,7 @@ this project uses Spring Boot 3.0.x with Spring Web, Data JPA and security to sh
 - We added a REST controller to show how we can use Spring MVC to generate REST API
 - We added Swagger to generate the API documentation
 
+## V5.0.0
+- We added the security layer to secure our REST endpoints
+- We added a filter in the security filter chain
+
