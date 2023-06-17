@@ -29,3 +29,7 @@ this project uses Spring Boot 3.0.x with Spring Web, Data JPA and security to sh
 - We added the security layer to secure our REST endpoints
 - We added a filter in the security filter chain
 
+## V6.0.0
+- We added and configured Actuator
+- We added an aspect using an PointCut annotation
+
