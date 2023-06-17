@@ -21,6 +21,7 @@ public class SpringSecurityConfiguration {
 
 	private static final String ADMIN_ROLE = "ADMIN";
 	private static final String BOOK_API_ENDPOINT = "/api/v1/books";
+	private static final String H2_CONSOLE = "/h2/**";
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -44,12 +45,14 @@ public class SpringSecurityConfiguration {
 		@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 		return http.csrf().disable()
+				.headers().frameOptions().sameOrigin().and()
 				.authorizeHttpRequests(
 						requests -> requests
 								.requestMatchers(new AntPathRequestMatcher(BOOK_API_ENDPOINT, HttpMethod.POST.name())).hasRole(ADMIN_ROLE)
 								.requestMatchers(new AntPathRequestMatcher(BOOK_API_ENDPOINT, HttpMethod.DELETE.name())).hasRole(ADMIN_ROLE)
 								.requestMatchers(new AntPathRequestMatcher(BOOK_API_ENDPOINT, HttpMethod.PATCH.name())).hasRole(ADMIN_ROLE)
 								.requestMatchers(new AntPathRequestMatcher(BOOK_API_ENDPOINT, HttpMethod.PUT.name())).hasRole(ADMIN_ROLE)
+								.requestMatchers(new AntPathRequestMatcher(H2_CONSOLE)).permitAll()
 								.anyRequest().authenticated()
 				)
 				.httpBasic()
